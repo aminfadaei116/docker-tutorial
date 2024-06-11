@@ -1,15 +1,11 @@
-from typing import Union
-
-from fastapi import FastAPI
-
-app = FastAPI()
+import numpy as np
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+def main():
+    x = np.array([1, 2, 3])
+    y = np.array([3, 2, 1])
+    print(x + y)
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+if __name__ == "__main__":
+    main()
